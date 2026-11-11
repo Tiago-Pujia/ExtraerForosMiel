@@ -18,6 +18,54 @@ Los contenidos se exportan en formatos especialmente optimizados para que **otra
 
 ---
 
+## Requisitos del Sistema
+
+Para ejecutar esta herramienta se necesita:
+
+- **Node.js**: Versión **18.0.0 o superior** recomendada (compatible con Node.js 16+, 18+, 20+, 22+ y 24+).
+  - Para verificar si ya lo tienes instalado en tu terminal:
+    ```bash
+    node -v
+    ```
+  - Si aún no lo tienes instalado, descárgalo e instálalo desde [nodejs.org](https://nodejs.org/) o a través de tu gestor de paquetes favorito (`nvm`, `fnm`, `apt`, `brew`, `winget`, `choco`).
+- **npm**: Incluido automáticamente al instalar Node.js (usado para ejecutar scripts como `npm start` y `npm run all`).
+- **Cuenta activa en MIEL**: DNI/usuario y contraseña válidos en [MIEL UNLaM](https://miel.unlam.edu.ar/).
+- **Conexión a Internet**: Acceso HTTPS a `https://miel.unlam.edu.ar/`.
+
+> [!NOTE]
+> **Cero dependencias externas:** Este proyecto está desarrollado usando **exclusivamente módulos nativos de Node.js** (`https`, `http`, `fs`, `path`, `readline`).  
+> **No es necesario ejecutar `npm install`** para descargar paquetes de terceros ni se necesitan navegadores pesados tipo Puppeteer/Chromium.
+
+---
+
+## Instalación y Preparación Rápida
+
+1. **Clonar o descargar el repositorio:**
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd ExtraerForosMiel
+   ```
+
+2. **Configurar credenciales (`.env`):**
+   Copia el archivo de ejemplo:
+   ```bash
+   cp .env.example .env
+   ```
+   Abre `.env` y coloca tu usuario y contraseña de MIEL:
+   ```env
+   MIEL_USUARIO=tu_dni_o_usuario
+   MIEL_PASSWORD=tu_contraseña
+   OUTPUT_DIR=resultados
+   ```
+
+3. **Ejecutar la herramienta:**
+   ```bash
+   npm start
+   ```
+   *(Listo, no se requiere ningún paso adicional de compilación o instalación).*
+
+---
+
 ## Configuración de Credenciales
 
 Puedes configurar tus credenciales en un archivo `.env` en la raíz del proyecto (este archivo está ignorado en `.gitignore` por seguridad):
@@ -107,3 +155,11 @@ resultados/
 
 1. **Lectura directa de archivos Markdown**: Puedes adjuntar directamente los archivos `.md` de cada tema a chats como ChatGPT, Claude o Gemini. La estructura de hilos y respuestas con citas (`>`) permite al modelo entender inmediatamente quién preguntó y qué respondió el profesor.
 2. **Embeddings y Búsqueda Vectorial (RAG)**: Si utilizas LangChain, LlamaIndex o una base de datos vectorial (como ChromaDB o Pinecone), puedes indexar directamente los archivos `.json` usando los campos `autor`, `fecha`, y `contenido` como documentos con metadatos.
+
+---
+
+## 🤖 Documentación Técnica para IAs y Desarrolladores
+
+Si eres una Inteligencia Artificial, agente LLM o desarrollador buscando comprender la arquitectura interna del extractor, el flujo de autenticación, los esquemas de datos JSON y las pautas para integrar estos foros en sistemas RAG, consulta el archivo:
+
+👉 **[DOCUMENTACION_IA.md](DOCUMENTACION_IA.md)** — *Documentación técnica estructurada para modelos de lenguaje y sistemas autónomos.*
