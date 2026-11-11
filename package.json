@@ -1,0 +1,21 @@
+{
+  "name": "extraer-foros-miel",
+  "version": "1.0.0",
+  "description": "Extractor de foros de MIEL (UNLaM) optimizado para lectura por IA y archivo offline",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "all": "node index.js --all",
+    "descargar": "node index.js"
+  },
+  "keywords": [
+    "miel",
+    "unlam",
+    "foros",
+    "scraper",
+    "ia",
+    "markdown"
+  ],
+  "author": "",
+  "license": "MIT"
+}
