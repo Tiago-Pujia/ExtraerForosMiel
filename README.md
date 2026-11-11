@@ -26,13 +26,25 @@ Para ejecutar esta herramienta se necesita:
 
 - **Node.js**: Versión **18.0.0 o superior** recomendada (compatible con Node.js 16+, 18+, 20+, 22+ y 24+).
 
-  > Descárgalo e instálalo desde [nodejs.org](https://nodejs.org/)
-
 - **npm**: Incluido automáticamente al instalar Node.js (usado para ejecutar scripts como `npm start` y `npm run all`).
 
 > [!NOTE]
 > **Cero dependencias externas:** Este proyecto está desarrollado usando **exclusivamente módulos nativos de Node.js** (`https`, `http`, `fs`, `path`, `readline`).  
 > **No es necesario ejecutar `npm install`** para descargar paquetes de terceros.
+
+---
+
+## Configuración de Credenciales
+
+Puedes configurar tus credenciales en un archivo `.env` en la raíz del proyecto (este archivo está ignorado en `.gitignore` por seguridad):
+
+```env
+MIEL_USUARIO=tu_dni_o_usuario
+MIEL_PASSWORD=tu_contraseña
+OUTPUT_DIR=resultados
+```
+
+También puedes suministrar las credenciales por argumentos de línea de comandos (`-u` y `-p`).
 
 ---
 
@@ -67,20 +79,6 @@ Para ejecutar esta herramienta se necesita:
    ```
 
    *(Listo, no se requiere ningún paso adicional de compilación o instalación).*
-
----
-
-## Configuración de Credenciales
-
-Puedes configurar tus credenciales en un archivo `.env` en la raíz del proyecto (este archivo está ignorado en `.gitignore` por seguridad):
-
-```env
-MIEL_USUARIO=tu_dni_o_usuario
-MIEL_PASSWORD=tu_contraseña
-OUTPUT_DIR=resultados
-```
-
-También puedes suministrar las credenciales por argumentos de línea de comandos (`-u` y `-p`).
 
 ---
 
